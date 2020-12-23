@@ -19,7 +19,13 @@
                             <div class="form-row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="mb-1">Client ID <span class="badge badge-warning">Client ID means Users table ID</span></label>
+                                        <label class="mb-1">Client ID 
+                                            <span class="badge badge-warning">Hints
+                                                @foreach ($user as $data)
+                                                    {{ $data->id }}@if (!$loop->last),@endif
+                                                @endforeach
+                                            </span>
+                                        </label>
                                         <div class="position-relative icon-form-control">
                                             <i class="feather-user position-absolute"></i>
                                             <input class="form-control uId" type="number" name="id" required autofocus min='0' placeholder="Client ID">

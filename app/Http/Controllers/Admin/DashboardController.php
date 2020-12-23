@@ -17,7 +17,8 @@ class DashboardController extends Controller
 
     // create license 
     public function createLicense(){
-        return view('pages.create-license');
+        $user = User::select('id')->where('license_key', NULL)->where('id', '!=', 2)->get();
+        return view('pages.create-license', compact('user'));
     }
 
     // user view api 
